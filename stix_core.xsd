@@ -12,6 +12,12 @@
 	<xs:import namespace="http://stix.mitre.org/common-1" schemaLocation="stix_common.xsd"/>
 	<xs:import namespace="http://cybox.mitre.org/cybox-2" schemaLocation="cybox/cybox_core.xsd"/>
 	<xs:import namespace="http://data-marking.mitre.org/Marking-1" schemaLocation="data_marking.xsd"/>
+	<xs:element name="STIX_Packages" type="stix:STIX_PackagesType"/>
+	<xs:complexType name="STIX_PackagesType">
+		<xs:sequence>
+			<xs:element ref="stix:STIX_Package" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:element name="STIX_Package" type="stix:STIXType">
 		<xs:annotation>
 			<xs:documentation>The STIX_Package field contains a bundle of information characterized in the Structured Threat Information eXpression (STIX) language.</xs:documentation>
